@@ -1,0 +1,27 @@
+from tkinter import *
+
+# 제목 / 해상도 / 사이즈 조정 관련 지정
+window = Tk()
+window.title("카페 키오스크")
+window.geometry("700x700")
+window.resizable(False, False)
+
+# 메뉴 구성
+menu = {
+    "커피": {
+        "아메리카노": 2000,
+        "카페라떼": 3000,
+        "콜드브루": 4000
+    },
+    "디저트": {
+        "케이크": 5000, 
+        "크루아상": 4000
+    }
+}
+
+cart = []  # 장바구니
+waiting_number = 1  # 대기번호 -> 차후 개발 예정
+
+# UI 위젯들 초기값 None으로 선언
+total_label = None
+cart_list = None

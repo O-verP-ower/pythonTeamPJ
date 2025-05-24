@@ -1,0 +1,18 @@
+from basement import *
+from tkinter import messagebox as msg
+from update import *
+
+def checkout() :
+    
+    # 장바구니가 비어 있는 경우
+    if not cart :
+        msg.showinfo("알림", "장바구니가 비었습니다.")
+        return
+        
+    # 장바구니가 비어 있지 않은 경우 -> 결제 완료 메세지 출력 (차후 영수증 출력 여부 + 대기번호 출력 예정)
+    msg.showinfo("알림", "결제가 완료되었습니다!")
+    # 장바구니 초기화
+    cart.clear()
+    update()
+    
+    
