@@ -3,7 +3,7 @@ from tkinter import *
 # 제목 / 해상도 / 사이즈 조정 관련 지정
 window = Tk()
 window.title("카페 키오스크")
-window.geometry("700x700")
+window.geometry("500x700")
 window.resizable(False, False)
 
 # 메뉴 구성

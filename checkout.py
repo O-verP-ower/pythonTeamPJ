@@ -1,7 +1,8 @@
 from basement import *
 from tkinter import messagebox as msg
 from update import *
-
+from receipt import *
+from waiting_number import *
 def checkout() :
     
     # 장바구니가 비어 있는 경우
@@ -14,5 +15,7 @@ def checkout() :
     # 장바구니 초기화
     cart.clear()
     update()
-    
+    receipt()
+    print_number()
+    basement.waiting_number += 1
     
