@@ -15,13 +15,11 @@ def receipt():
         outFp.write("=========================\n")
         for item in cart :
             outFp.write("%s x %d개 - %d원\n" % (item[0], item[2], (item[1] * item[2])))
-        outFp.write("\n\n")
-        outFp.write("결제일시 : %s\n" % datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-        
-        # 총액 : %d원 출력되도록 구현 예정
-        
+        # 총액 : %d원 출력되도록 구현 완료 (5/28)
+        outFp.write("--------------------------\n")
+        outFp.write("총액 : %d원\n" % sum([item[1] * item[2] for item in cart]))
         outFp.write("=========================\n")
-
+        outFp.write("결제일시 : %s\n" % datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     else :
         pass
     
