@@ -3,29 +3,9 @@ from update import *
 
 # 메뉴별 추가 함수 구성 
 
-def add_americano():
-    name = "아메리카노"
-    price = menu["커피"][name]
-    _add_to_cart(name, price)
+def add_menu(category, name) : # 코드 간소화 (6/3)
 
-def add_caffeelatte():
-    name = "카페라떼"
-    price = menu["커피"][name]
-    _add_to_cart(name, price)
-
-def add_coldbrew():
-    name = "콜드브루"
-    price = menu["커피"][name]
-    _add_to_cart(name, price)
-
-def add_cake():
-    name = "케이크"
-    price = menu["디저트"][name]
-    _add_to_cart(name, price)
-
-def add_croissant():
-    name = "크루아상"
-    price = menu["디저트"][name]
+    price = menu[category][name]
     _add_to_cart(name, price)
 
 # 공통 기능 함수 (내부에서만 사용)

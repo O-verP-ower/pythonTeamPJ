@@ -17,7 +17,10 @@ cart_list.place(x=170, y=450)
 total_label = Label(basement.window, text="총합계 : 0원")
 total_label.place(x=240, y=420)
 checkout_btn = Button(basement.window, text="결제하기", width=10, bg='green', command=checkout)
-checkout_btn.place(x=240, y=650)
+checkout_btn.place(x=200, y=650)
+
+cancel_btn = Button(basement.window, text="전체 취소", width=10, bg='red', command=cancel_all)
+cancel_btn.place(x=290, y=650)
 
 # basement 모듈 내 변수에 현재 위젯 주소 할당
 basement.cart_list = cart_list
