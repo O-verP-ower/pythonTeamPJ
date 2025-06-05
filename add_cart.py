@@ -6,7 +6,9 @@ from update import *
 def add_menu(category, name) : # 코드 간소화 (6/3)
 
     price = menu[category][name]
+    
     _add_to_cart(name, price)
+    
 
 # 공통 기능 함수 (내부에서만 사용)
 def _add_to_cart(name, price):

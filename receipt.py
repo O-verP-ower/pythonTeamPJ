@@ -3,6 +3,7 @@ from basement import *
 from tkinter import *
 from tkinter import messagebox as msg
 
+
 def receipt():
     
     outFp = None
