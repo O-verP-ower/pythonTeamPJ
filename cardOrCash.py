@@ -21,7 +21,11 @@ def keyEvent(event) :
             While_pay.pack()
         else :
             While_pay.config(text="결제 중.....")
-        purchase.after(2000,complete)
+        purchase.after(2000, complete)
+    
+    elif event.keycode == 27:
+        
+        uncomplete()
         
     else :
         msg.showwarning("오류", "결제가 제대로 완료되지 않았습니다.")
@@ -48,21 +52,26 @@ def cash_pay():
     
     purchase.deiconify()
     if Info is None :
-            Info = Label(purchase, text="현금을 투입해 주세요.(Enter)")
-            Info.pack()
+        Info = Label(purchase, text="현금을 투입해 주세요.(Enter)")
+        Info.pack()
     else :
-            Info.config(text="현금을 투입해 주세요.(Enter) ")
+        Info.config(text="현금을 투입해 주세요.(Enter) ")
     purchase.bind("<Key>", keyEvent)
     purchase.focus_set()
     
     
 def complete():
-        global While_pay
-        msg.showinfo("알림", "결제가 완료되었습니다.")
-        purchase.withdraw()
-        payment.withdraw()
-        While_pay.pack_forget()
-        While_pay = None
-        checkout()
         
+    global While_pay
+    msg.showinfo("알림", "결제가 완료되었습니다.")
+    purchase.withdraw()
+    payment.withdraw()
+    While_pay.pack_forget()
+    While_pay = None
+    checkout()
+
+def uncomplete() :
     
+    msg.showinfo("결제 취소", "결제가 취소되었습니다.")
+    purchase.withdraw()
+    payment.withdraw()
