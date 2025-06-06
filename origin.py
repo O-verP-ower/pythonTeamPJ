@@ -30,9 +30,9 @@ basement.total_label = total_label
 # 결제창 UI
 payInfo = Label(payment, text="결제 방법을 선택하세요.")
 payInfo.pack()
-cardBtn = Button(payment, text="카드 결제", command=lambda: card_pay())
+cardBtn = Button(payment, text="카드 결제", command=lambda: pay("card"))
 cardBtn.place(x=75, y=50)
-cashBtn = Button(payment, text="현금 결제", command=lambda: cash_pay())
+cashBtn = Button(payment, text="현금 결제", command=lambda: pay("cash"))
 cashBtn.place(x=175, y=50)
 
 

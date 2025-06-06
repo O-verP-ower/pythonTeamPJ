@@ -15,7 +15,7 @@ def keyEvent(event) :
     
     global While_pay
     
-    if event.keycode == 13:
+    if event.keycode == 13: # Enter Key
         if While_pay is None :
             While_pay = Label(purchase, text="결제 중.....")
             While_pay.pack()
@@ -23,42 +23,32 @@ def keyEvent(event) :
             While_pay.config(text="결제 중.....")
         purchase.after(2000, complete)
     
-    elif event.keycode == 27:
+    elif event.keycode == 27: #ESC Key
         
         uncomplete()
         
     else :
         msg.showwarning("오류", "결제가 제대로 완료되지 않았습니다.")
             
+def pay(method):
+    
+    global Info
+    
+    purchase.deiconify()
+    if Info is None :
+            if method == "card" :
+                
+                Info = Label(purchase, text="카드를 넣어주세요.(Enter)")
+                Info.pack()
             
-        
-def card_pay():
-    
-    global Info
-    
-    purchase.deiconify()
-    if Info is None :
-            Info = Label(purchase, text="카드를 넣어주세요.(Enter)")
-            Info.pack()
+            else :
+                Info = Label(purchase, text="현금을 투입해 주세요.(Enter)")
+                Info.pack()
     else :
-            Info.config(text="카드를 넣어주세요.(Enter)")
+            if method == "card" : Info.config(text="카드를 넣어주세요.(Enter)")
+            else : Info.config(text="현금을 투입해 주세요.(Enter) ")
     purchase.bind("<Key>", keyEvent)
     purchase.focus_set()
-    
-    
-def cash_pay():
-    
-    global Info
-    
-    purchase.deiconify()
-    if Info is None :
-        Info = Label(purchase, text="현금을 투입해 주세요.(Enter)")
-        Info.pack()
-    else :
-        Info.config(text="현금을 투입해 주세요.(Enter) ")
-    purchase.bind("<Key>", keyEvent)
-    purchase.focus_set()
-    
     
 def complete():
         
