@@ -51,7 +51,7 @@ def cash_pay():
             Info = Label(purchase, text="현금을 투입해 주세요.(Enter)")
             Info.pack()
     else :
-            Info.config(text="현금을 투입해 주세요.(Enter)")
+            Info.config(text="현금을 투입해 주세요.(Enter) ")
     purchase.bind("<Key>", keyEvent)
     purchase.focus_set()
     
