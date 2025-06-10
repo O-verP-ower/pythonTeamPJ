@@ -12,7 +12,7 @@ def update():
         price = item[1]
         qty = item[2]
         total += price * qty
-        basement.cart_list.insert(END, f"{name} - {price}원 x {qty}개")
+        basement.cart_list.insert(END, f"{name} - {price}원 x {qty}개 : {price * qty}원")
     
     basement.total_label.config(text=f"총합계: {total}원")
 
