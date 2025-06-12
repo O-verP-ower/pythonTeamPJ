@@ -7,7 +7,7 @@ from cardOrCash import *
 # UI 위젯 생성
 # 커피 / 디저트 버튼 생성
 
-coffee_btn = Button(basement.window, text="커피", width=10, command=show_coffee)
+coffee_btn = Button(basement.window, text="음료", width=10, command=show_coffee)
 bakery_btn = Button(basement.window, text="디저트", width=10, command=show_dessert)
 coffee_btn.place(x=175, y=30)
 bakery_btn.place(x=295, y=30)
